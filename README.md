@@ -369,3 +369,39 @@ The less command is an efficient way to view and navigate through large files in
 ```bash
 man less
 ```
+# Using the Pipe (`|`) Command
+
+The pipe (`|`) command is a powerful feature in Unix-like operating systems that allows you to connect the output of one program directly to the input of another program. This enables you to write and run multiple commands together in a single line, creating a streamlined workflow.
+
+## General Syntax
+
+The general syntax of the pipe is as follows:
+
+```bash
+[program that produces output] | [program that uses pipe output as input instead of a file]
+```
+#### Example
+Here’s a simple example to illustrate how the pipe works:
+
+```bash
+ls -l | grep "txt"
+```
+##### In this example:
+
+`ls -l` lists the files in the current directory in long format.
+The output of `ls -l` is then passed to `grep "txt"`, which filters the list to show only files that contain "txt" in their names.
+### Chaining Multiple Commands
+You can also chain multiple commands together using pipes. 
+#### For example:
+
+```bash
+cat file.txt | grep "search_term" | sort | uniq
+```
+In this command:
+
+1. `cat file.txt`: Reads the contents of file.txt.
+2. `grep "search_term"`: Searches for lines containing "search_term" in the output from `cat`.
+3. `sort`: Sorts the results obtained from `grep`.
+4. `uniq`: Removes any duplicate lines from the sorted output.<br>
+**Conclusion**
+The pipe command is an essential tool for command-line users, allowing for efficient data processing and manipulation by connecting multiple commands together. By using pipes, you can create complex command sequences that are both powerful and flexible. 
