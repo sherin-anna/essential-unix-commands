@@ -405,3 +405,78 @@ In this command:
 4. `uniq`: Removes any duplicate lines from the sorted output.<br>
 **Conclusion**
 The pipe command is an essential tool for command-line users, allowing for efficient data processing and manipulation by connecting multiple commands together. By using pipes, you can create complex command sequences that are both powerful and flexible. 
+
+# Using the `head` Command
+
+The `head` command in Unix-like operating systems is used to display the beginning of a file. By default, it shows the first 10 lines of the specified file, but you can customize the number of lines displayed using the `-n` option.
+
+## Basic Syntax
+
+The general syntax of the `head` command is as follows:
+
+```bash
+head [-n] [file]
+```
+`-n`: Specifies the number of lines to display from the beginning of the file. If this option is omitted, `head` will display the first 10 lines by default.
+`[file]`: The name of the file you want to read.
+
+#### Example
+To read the first 10 lines of a file named `example.txt`, you can simply run:
+
+```bash
+head example.txt
+```
+#### Customizing the Number of Lines
+If you want to display a different number of lines, you can use the `-n` option. For example, to read the first 5 lines of `example.txt`, you would use:
+
+```bash
+head -n 5 example.txt
+```
+**Conclusion**
+The head command is a useful tool for quickly viewing the beginning of a file without opening the entire file. This can be particularly helpful for large files where you only need to check the initial content. For more information and options, you can check the manual page by running:
+
+```bash
+man head
+```
+
+# Using the `tail` Command
+
+The `tail` command in Unix-like operating systems is used to display the end of a file. By default, it shows the last 10 lines of the specified file, but you can customize the number of lines displayed using the `-n` option.
+
+## Basic Syntax
+
+The general syntax of the `tail` command is as follows:
+
+```bash
+tail [-n] [file]
+```
+`-n`: Specifies the number of lines to display from the end of the file. If this option is omitted, tail will display the last 10 lines by default.
+`[file]`: The name of the file you want to read.
+### Example
+To read the last 10 lines of a file named example.txt, you can simply run:
+
+```bash
+tail example.txt
+```
+#### Customizing the Number of Lines
+If you want to display a different number of lines, you can use the `-n` option. For example, to read the last 5 lines of `example.txt`, you would use:
+
+```bash
+tail -n 5 example.txt
+```
+### Combining `head` and `tail`
+You can use both `head` and `tail` commands together to print specific lines from a file. For example, if you want to print lines 11 to 20 from `file.txt`, you can use the following command:
+
+```bash
+head -n 20 file.txt | tail -n 10
+```
+#### Explanation of the Combined Command
+1. `head -n 20 file.txt`: This command reads the first 20 lines of `file.txt`.
+2. `|`: The pipe operator takes the output of the `head` command and passes it as input to the `tail` command.
+3. `tail -n 10`: This command then reads the last 10 lines of the output from the `head` command, effectively giving you lines 11 to 20 of `file.txt`.
+**Conclusion**
+The tail command, when used in conjunction with the head command, allows you to easily extract specific lines from a file. This can be particularly useful for analyzing large files where you only need to focus on a certain range of lines. For more information and options, you can check the manual page by running:
+
+```bash
+man tail
+```
