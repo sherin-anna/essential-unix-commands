@@ -480,3 +480,151 @@ The tail command, when used in conjunction with the head command, allows you to 
 ```bash
 man tail
 ```
+# Nano Text Editor
+
+`nano` is a simple, user-friendly text editor for Unix-like operating systems. It is commonly used for creating and editing text files directly from the command line.
+
+## Example Usage
+
+To create or edit a file using `nano`, you can use the following commands:
+
+1. **Creating or Editing a Text File:**
+   ```bash
+   $ nano file.txt
+   ````
+2. **Creating or Editing a Bash Script:**
+```bash
+$ nano file.sh
+```
+   #### Basic Commands in Nano
+__Save Changes:__ Press `CTRL + O`, then hit `Enter` to confirm.<br>
+__Exit Nano:__ Press CTRL + X.<br>
+__Cut Text:__ Press CTRL + K.<br>
+__Paste Text:__ Press CTRL + U.<br>
+__Search for Text:__ Press CTRL + W.<br>
+#### Example Bash Script
+Here’s a simple example of a Bash script you might create with nano:
+
+```bash
+#!/bin/bash
+# This script prints "Hello, World!" to the console.
+echo "Hello, World!"
+```
+To make the script executable, run:
+```bash
+chmod +x file.sh
+```
+Then execute the script with:
+```bash
+./file.sh
+```
+
+# `mv` Command
+
+The `mv` command is used to move (or rename) files and directories in Unix/Linux systems. It can be thought of as a "cut" command, as it removes the file from its original location and places it in a new one.
+
+## Syntax
+
+```bash
+mv [options] source destination
+```
+__source:__ The file or directory you want to move.
+__destination:__ The target location where you want to move the source.
+#### Example Usage
+1.__Moving a File:__ To move a file named `journal-2017-01-24.txt` to a directory named `Journal`:
+
+```bash
+mv journal-2017-01-24.txt Journal/
+```
+2.__Renaming a File:__ To rename `journal-2017-01-24.txt` to `Journal.txt` in the current directory:
+
+```bash
+mv journal-2017-01-24.txt Journal.txt
+```
+3.__Moving a Directory:__ To move a directory named `Journal` to another directory called Documents:
+
+```bash
+mv Journal Documents/
+```
+#### Important Notes
+If the destination file already exists, it will be overwritten without any warning. Use the `-i` option to prompt before overwriting:
+```bash
+mv -i source_file destination_file
+```
+You can also move multiple files to a directory:
+```bash
+mv file1.txt file2.txt Journal/
+```
+**Conclusion**
+The mv command is a powerful tool for organizing files and directories in your system. Use it carefully to avoid accidental data loss.
+
+# `cp` Command
+
+The `cp` command is used to copy files and directories in Unix/Linux systems. This command allows you to create duplicates of files or entire folders.
+
+## Syntax
+
+```bash
+cp [options] source destination
+```
+__source:__ The file or directory you want to copy.
+__destination:__ The target location where you want to copy the source.
+#### Example Usage
+1.__Copying a File:__ To copy a file named file.txt to another location:
+
+```bash
+cp file.txt /path/to/destination/
+```
+2.__Copying a Directory:__ To copy a directory named `Journal` to another directory called `Documents`, including all its subdirectories and files, use the `-r` (recursive) option:
+
+```bash
+cp -r Journal Documents/
+```
+Important Options
+__-r:__ Recursively copy directories and their contents.
+__-i:__ Prompt before overwriting files.
+__-v:__ Verbosely show the files being copied.
+#### Example with Options
+To copy a directory and see the files being copied, you can combine options:
+
+```bash
+cp -rv Journal Documents/
+```
+**Conclusion**
+The cp command is a versatile tool for copying files and directories in your system. Use it carefully to ensure you do not unintentionally overwrite important files.
+
+# `rm` Command
+
+The `rm` command is used to permanently delete files and directories in Unix/Linux systems. Be cautious when using this command, as deleted files cannot be easily recovered.
+
+## Syntax
+
+```bash
+rm [options] file_or_directory
+```
+__file_or_directory:__ The file or directory you want to delete.
+#### Example Usage
+1.__Deleting a File:__ To delete a file named `file.txt`:
+
+```bash
+rm file.txt
+```
+2.__Deleting a Directory:__ To delete a directory named `folder`, you must use the `-r` (recursive) option. This allows you to delete a directory and all of its contents, including subdirectories:
+
+```bash
+rm -r folder
+```
+#### Important Options
+__-r:__ Recursively delete directories and their contents.
+__-i:__ Prompt before every removal, providing a safeguard against accidental deletions.
+__-f:__ Force deletion without prompting for confirmation (use with caution).
+#### Example with Options
+To delete a directory and all its contents without prompts, you can use:
+
+```bash
+rm -rf folder
+```
+#### Important Note
+__Caution:__ The `rm` command permanently deletes files and directories. Always double-check the files or directories you are deleting, especially when using the `-r` and `-f` options.
+**Conclusion**
+The rm command is a powerful tool for removing files and directories in your system. Use it with care to avoid accidental data loss.
